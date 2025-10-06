@@ -11,6 +11,8 @@ waterways = ox.features_from_place(place, tags={"waterway": "river"})
 # 3️⃣ Filtrer uniquement la Seine
 seine = waterways[waterways["name"].str.contains("Seine", case=False, na=False)]
 
+seine.to_excel("seine_all.xlsx", index=False)
+
 if seine.empty:
     print("Aucune donnée trouvée pour la Seine.")
 else:
